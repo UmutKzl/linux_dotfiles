@@ -7,4 +7,4 @@ if [ ! -d "$DOTDIR" ]; then
   git clone $GITREPO $DOTDIR
 fi
 
-ln -s $DOTDIR/files/.config/* ~/.config
+ln -si $DOTDIR/files/.config/* ~/.config
