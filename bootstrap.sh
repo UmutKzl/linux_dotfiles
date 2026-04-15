@@ -5,14 +5,12 @@ DOTDIR="$HOME/.dots"
 
 clonerepo() {
   if [ ! -d "$DOTDIR" ]; then
-    git clone $GITREPO $DOTDIR
+    git clone "$GITREPO" "$DOTDIR"
   fi
 }
 
 linkdots() {
-  ln -si $DOTDIR/files/.config/* ~/.config
-  ln -si $DOTDIR/files/.vimrc ~/.vimrc
-  ln -si $DOTDIR/files/.vim ~/.vim
+  ln -si "$DOTDIR"/files/.config/* ~/.config
 }
 
 installpackages() {
@@ -20,9 +18,11 @@ installpackages() {
     echo "This script will install dependencies only in Fedora. You should install them manually."
   fi
 
-  sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+  sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+  sudo dnf copr enable -y solopasha/hyprland
+  sudo dnf copr enable -y mradityaalok/satori
 
-  sudo dnf install -y swayosd brightnessctl fastfetch ghostty neovim sway swaybg zip unzip tar luarocks lua
+  sudo dnf install -y swayosd brightnessctl fastfetch ghostty neovim swayfx swaybg zip unzip tar luarocks lua nwg-look
 }
 
 clonerepo
