@@ -11,6 +11,8 @@ clonerepo() {
 
 linkdots() {
   ln -si $DOTDIR/files/.config/* ~/.config
+  ln -si $DOTDIR/files/.vimrc ~/.vimrc
+  ln -si $DOTDIR/files/.vim ~/.vim
 }
 
 installpackages() {
@@ -20,7 +22,7 @@ installpackages() {
 
   sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 
-  sudo dnf install -y swayosd brightnessctl fastfetch ghostty neovim sway swaybg zip unzip tar
+  sudo dnf install -y swayosd brightnessctl fastfetch ghostty neovim sway swaybg zip unzip tar luarocks lua
 }
 
 clonerepo
