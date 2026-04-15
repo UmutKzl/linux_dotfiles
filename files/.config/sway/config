@@ -67,6 +67,9 @@ input type:keyboard {
 # Start a terminal
 bindsym $mod+return exec $term
 
+# Start an editor
+bindsym $mod+shift+return exec neovide
+
 # Kill focused window
 bindsym $mod+q kill
 
@@ -247,9 +250,10 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 # Borders and gaps
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 gaps inner 5
 gaps outer 5
+corner_radius 20
 
 #
 # Status Bar:
