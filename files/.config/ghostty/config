@@ -25,3 +25,10 @@ split-divider-color = 414559
 
 background-opacity = 0.8
 background-opacity-cells = true
+
+# Move between splits with Alt + hjkl
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+
