@@ -22,13 +22,13 @@ installpackages() {
     sudo dnf copr enable -y mradityaalok/satori
 
     sudo dnf install -y \
-      swayosd brightnessctl fastfetch ghostty neovim swayfx swaybg \
+      swayosd brightnessctl fastfetch ghostty neovim sway swaybg \
       zip unzip tar luarocks lua nwg-look
 
   elif command -v yay >/dev/null; then
     yay -S --needed \
       swayosd brightnessctl fastfetch ghostty-git neovim sway swaybg \
-      zip unzip tar luarocks lua nwg-look
+      zip unzip tar luarocks lua nwg-look swayidle
 
   else
     echo "No supported package manager found"
