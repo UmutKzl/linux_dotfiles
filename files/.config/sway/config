@@ -253,7 +253,6 @@ client.background        $base
 for_window [class="^.*"] border pixel 3
 gaps inner 5
 gaps outer 5
-corner_radius 20
 
 #
 # Status Bar:
